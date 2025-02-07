@@ -1,19 +1,22 @@
-let randomNumber1 = Math.floor(Math.random() * 6) + 1;
-let randomImageSource1 = "images/dice" + randomNumber1 + ".png";
+if (localStorage.getItem("visited")) {
 
-let image1 = document.querySelectorAll("img")[0];
-image1.setAttribute("src", randomImageSource1);
+    let randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    let randomImageSource1 = "images/dice" + randomNumber1 + ".png";
+    let image1 = document.querySelectorAll("img")[0];
+    image1.setAttribute("src", randomImageSource1);
 
-let randomNumber2 = Math.floor(Math.random() * 6) + 1;
-let randomImageSource2 = "images/dice" + randomNumber2 + ".png";
+    let randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    let randomImageSource2 = "images/dice" + randomNumber2 + ".png";
+    let image2 = document.querySelectorAll("img")[1];
+    image2.setAttribute("src", randomImageSource2);
 
-let image2 = document.querySelectorAll("img")[1];
-image2.setAttribute("src", randomImageSource2);
-
-if (randomImageSource1 > randomImageSource2) {
-  document.querySelector("h1").innerHTML = "🚩Player 1 Wins!";
-} else if (randomImageSource1 < randomImageSource2) {
-  document.querySelector("h1").innerHTML = "Player 2 Wins!🚩";
+    if (randomNumber1 > randomNumber2) {
+        document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
+    } else if (randomNumber1 < randomNumber2) {
+        document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩";
+    } else {
+        document.querySelector("h1").innerHTML = "Draw!";
+    }
 } else {
-  document.querySelector("h1").innerHTML = "Draw!";
+    localStorage.setItem("visited", "true");
 }
