@@ -10,3 +10,4 @@ CSS - Styling the game UI
 JavaScript - Game logic and random number generation
 
 🔗 Live Demo
+https://riyagh.github.io/Dice-Game/
